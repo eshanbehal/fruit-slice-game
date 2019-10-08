@@ -1,10 +1,10 @@
 
 
-//click on stasrt/reset button
-    //are we playing?
-      //yes
-        //reload page
-      //no
+
+    
+      
+        
+      
         //show trials left.
         //change button text to reset game.
         //1.create a random fruit.

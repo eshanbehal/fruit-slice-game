@@ -42,10 +42,53 @@
         </div>
        <script>
         
+var playing= false;
+var score;
+var trialsLeft;           
+
+           
+           $(function(){
+               
+        //click on stasrt/reset button
+        $("#startreset").click(function(){
+                   
+                //are we playing?
+                   if(playing ==true){
+            
+            //yes
+            
+            //reload page
+            location.reload();
+            
+        }esle{//no
+                   
+                   playing = true;//game initiated. 
+            
+            
+            //set score to 0.
+            score=0;
+            $("#scorevalue").html(score);
+            
+            //show trials left
+            $("#trialsLeft").show();
+            trialsLeft=3;
+            
+            addHearts();
+            
+                  }
+               });    
+           });
+           
+  function addHearts(){
+              for(i=0; i<trialsLeft; i++){
+                  $("#trialsLeft").append(" x ");
+              } 
+               
+           }
 //var playing = false;
 //var score;
-//var action;
-//var timeremaining;
+////var action;
+//var trialsLeft;
 //var correctAnswer;
 //
 ////if we click on start/reset button
