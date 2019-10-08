@@ -6,10 +6,10 @@ html{
     background: -ms-radial-gradient(circle,#fff,#ccc);
 }
 #container{
-    height: 500px;
-    width: 650px;
+    height: 613px;
+    width: 690px;
     background-color: #9DD2EA;
-    margin: 100px auto;
+    margin: 10px auto;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 5px 3px 0px #009DE4;
@@ -21,11 +21,11 @@ html{
     position: absolute;
     background-color: #F1FF92;
     color: #888E5F;
-    padding: 11px;
+    padding: 10px;
     box-shadow: 0px 4px #9DA853;
     -webkit-box-shadow: 0px 4px #9DA853;
     -moz-box-shadow: 0px 4px #9DA853;
-    left: 630px;
+    left: 670px;
 }
 #correct{
     position: absolute;
@@ -44,87 +44,44 @@ html{
     display: none;
 }
 #question{
-    width: 600px;
-    height: 230px;
-    background-color: #9DA0EA;
+    width: 630px;
+    height: 430px;
+    background-color: white;
     margin: 50px auto 10px auto;
     box-shadow: 0px 4px 0px 0px #535AA8;
     -webkit-box-shadow: 0px 4px 0px 0px #535AA8;
     -moz-box-shadow: 0px 4px 0px 0px #535AA8;
-    border-radius: 10px;
+/*    border-radius: 10px;*/
     text-align: center;
     font-family: cursive , sans-serif;
     font-size: 130px;
     color: black;
 }
 #instruction{
-    width: 600px;
-    height: 60px;
+    width: 430px;
+    height: 50px;
     background-color: #B481D9;
-    margin: 5px auto;
+    margin: 8px auto;
     color: black;
     font-size: 20px;
     text-align: center;
-    line-height: 60px;
+    line-height: 50px;
     box-shadow: 0px 4px 0px 0px #8153A8;
     -webkit-box-shadow: 0px 4px 0px 0px #8153A8;
     -moz-box-shadow: 0px 4px 0px 0px #8153A8;
-    border-radius: 10px;
-}
-#choices{
-    width: 600px;
-    height: 100px;
-    margin: 10px auto;
-}
-.box{
-    width: 100px;
-    height: 80px;
-    background-color: white;
-    float: left;
-    margin-right:66px;
-    border-radius: 10px;
-    color: black;
-    cursor: pointer;
-    text-align: center;
-    line-height: 76px;
-    font-size: 30px;
-    box-shadow: 0px 4px 0px 0px #CEE9F5;
-    -webkit-box-shadow: 0px 4px 0px 0px #CEE9F5;
-    -moz-box-shadow: 0px 4px 0px 0px #CEE9F5;
-    transition: all 0.2s;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    position: relative;
-}
-#box4{
-    margin-right: 0px;
-}
-.box:hover, #startreset:hover{
-   background-color: blueviolet;
-    color: white;
-    box-shadow: 0px 4px 0px 0px #6b54d3;
-    -webkit-box-shadow: 0px 4px 0px 0px #6b54d3;
-    -moz-box-shadow: 0px 4px 0px 0px #6b54d3;
-}
-.box:active, #startreset:active{
-    box-shadow: 0px 0px #6b54d3;
-    -webkit-box-shadow: 0px 0px #6b54d3;
-    -moz-box-shadow: 0px 0px #6b54d3;
-    top: 4px; 
+/*    border-radius: 10px;*/
 }
 #startreset{
-    width: 100px;
+    width: 95px;
     background-color: #CEE9F5;
-    padding: 10px;
-    margin: 0px auto;
-    border-radius: 5px;
+    padding: 8px;
+    margin: 12px auto;
+    border-radius: 3px;
     color: black;
     cursor: pointer;
     text-align: center;
-    font-size: 20px;
-    box-shadow: 0px 4px 0px 0px #9DA853;
+    font-size: 18px;
+    box-shadow: 0px 4px 0px 0px #9DD2EA;
     -webkit-box-shadow: 0px 4px 0px 0px #9DA853;
     -moz-box-shadow: 0px 4px 0px 0px #9DA853;
     transition: all 0.2s;
@@ -133,35 +90,20 @@ html{
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
 }
-#timeremaining{
-    width: 160px;
-    padding: 12px;
-    position: absolute;
-    top: 500px;
-    left: 520px;
-    background-color: #B0E64C;
-    border-radius: 5px;
-    box-shadow: 0px 4px 0px 0px #ECECEC;
-    -webkit-box-shadow: 0px 4px 0px 0px #ECECEC;
-    -moz-box-shadow: 0px 4px 0px 0px #ECECEC;
-/*    visibility: hidden;
-    */
-    display: none;
-}
 #gameOver{
-    width: 650px;
-    height: 270px;
+    width: 500px;
+    height: 200px;
     background: linear-gradient(#F3C46B , #F3766C);
     background: -webkit-linear-gradient(#F3C46B , #F3766C);
     background: -moz-linear-gradient(#F3C46B , #F3766C);
     background: -ms-linear-gradient(#F3C46B , #F3766C);
     color: white;
     position: absolute;
-    top: 140px;
-    left: 35px;
-    font-size: 3em;
+    top: 190px;
+    left: 125px;
+    font-size: 2.4em;
     text-align: center;
-    border-radius: 10px;
+/*    border-radius: 10px;*/
     display: none;
     text-transform: uppercase;
     z-index: 2;
