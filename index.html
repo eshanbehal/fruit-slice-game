@@ -1,277 +1,80 @@
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Fruits Slice Game</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <link rel="stylesheet" href="styling.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+    <head>
+        <title>Fruits Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link rel="stylesheet" href="styling.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
+    
     <body>
-    <div id="container">
-        
-        <div id="score">Score: <span id="scorevalue">0</span></div>
-        
-        <div id="trialsLeft"> </div>
+        <div id="container">
+            <div id="score">
+                Score: <span id="scorevalue">0</span>
+            </div>
+            <div id="trialsLeft">
                 
-        <div id="correct">Correct</div>
-        
-        <div id="wrong">Try Again</div>
-        
-        <div id="question"> </div>
-        
-        <div id="instruction">Catch Fruits</div>
-        
+            </div>
+            
+            <div id="question">
+            
+            </div>
 <!--
-        <div id="choices">
-        <div id="box1" class="box"></div>
-        <div id="box2" class="box"></div>
-        <div id="box3" class="box"></div>
-        <div id="box4" class="box"></div>
-        </div>
+            <div id="correct">
+                Correct
+            </div>
+            <div id="wrong">
+                Try again
+            </div>
 -->
-        
-        <div id="startreset">Start Game</div>      
-        
-        <div id="gameOver">
-        
+<!--
+            <div id="fruitsContainer">
+                <img id="fruit1" class="fruit">
+            </div>
+-->
+            <div id="instruction">
+                Catch Fruits
+            </div>
+            <div id="startreset">
+                Start Game
+            </div>
+            <div id="gameOver">
+                
+            </div>
         </div>
+<!--
+        <audio id="slicesound">
+            <source src="audio/slicefruit.mp3"></source>
+            <source src="audio/slicefruit.ogg"></source>
+        </audio>
+-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
+    </script>
+        <script>
         
-        
-        </div>
-       <script>
-        
-var playing= false;
+        var playing = false;
 var score;
-var trialsLeft;           
-
-           
-           $(function(){
-               
-        //click on stasrt/reset button
-        $("#startreset").click(function(){
-                   
-                //are we playing?
-                   if(playing ==true){
-            
-            //yes
-            
-            //reload page
-            location.reload();
-            
-        }esle{//no
-                   
-                   playing = true;//game initiated. 
-            
-            
-            //set score to 0.
-            score=0;
-            $("#scorevalue").html(score);
-            
-            //show trials left
-            $("#trialsLeft").show();
-            trialsLeft=3;
-            
-            addHearts();
-            
-                  }
-               });    
-           });
-           
-  function addHearts(){
-              for(i=0; i<trialsLeft; i++){
-                  $("#trialsLeft").append(" x ");
-              } 
-               
-           }
-//var playing = false;
-//var score;
-////var action;
-//var trialsLeft;
-//var correctAnswer;
-//
-////if we click on start/reset button
-//
-//document.getElementById("startreset").onclick = function(){
-//    
-//    //if we are playing
-//    
-//    if(playing == true){
-//        
-//        //reload page
-//        
-//        location.reload();
-//        
-//    }else{  
-//        //if we are not playing
-//        
-//        //change mode to playing
-//        
-//        playing = true;
-//        
-//        //set score to 0.
-//        
-//        score = 0;
-//
-//  document.getElementById("scorevalue").innerHTML = score;
-//        
-//      //show countdown box.
-//        
-//        show("timeremaining");
-//        
-//        timeremaining=60;
-//        
-//        document.getElementById("timeremainingvalue").innerHTML= timeremaining;
-//        
-//        //hide game over box.
-//        
-//        hide("gameOver");
-//        
-//       //change button to reset.
-//        
-//        document.getElementById("startreset").innerHTML = "Reset Game";
-//        
-//        //start countdown.
-//        
-//         startCountdown();
-//        
-//        //generate a new q&a
-//        
-//        generateQA();
-//    }    
-//    
-//}
-//
-//function startCountdown(){
-//    action = setInterval(function(){
-//        
-//        timeremaining -= 1;
-//        
-//        document.getElementById("timeremainingvalue").innerHTML= timeremaining;
-//        
-//        if(timeremaining == 0){
-//            stopCountdown();
-//            
-//            show("gameOver");
-//            
-//            document.getElementById("gameOver").innerHTML = "<p>game over!</p><p>your score is "+ score + ".</p>";
-//            
-//             hide("timeremaining");
-//            hide("correct");
-//            hide("wrong");
-//            playing = false;
-//            document.getElementById("startreset").innerHTML = "Start Game";
-//        }
-//    }, 1000);
-//    
-//}
-//           
-//function stopCountdown(){
-//    
-//    clearInterval(action);
-//}
-//           
-//function hide(id){
-//    
-//    document.getElementById(id).style.display = "none";
-//}
-//
-//function show(id){
-//    
-//    document.getElementById(id).style.display = "block";
-//}
-//function generateQA(){
-//               var x = 1+ Math.round(9*Math.random());
-//               var y = 1+ Math.round(9*Math.random());
-//               correctAnswer = x*y;
-//    
-//    document.getElementById("question").innerHTML = x + "x" + y;
-//    
-//    var correctPosition = 1+ Math.round(3*Math.random());
-//    
-//   //for filling the one box with correct answer.
-//    document.getElementById("box"+correctPosition).innerHTML = correctAnswer;
-//    
-//    //fill other boxes with wrong answer.
-//    
-//    var answers = [correctAnswer];
-//    
-//    for(i=1; i<5; i++){
-//        
-//        if(i != correctPosition){
-//            
-//            var wrongAnswer;
-//            do{
-//                wrongAnswer = (1+ Math.round(9*Math.random()))*(1+ Math.round(9*Math.random()));
-//            }while(answers.indexOf(wrongAnswer)>-1)
-//                
-//                document.getElementById("box"+i).innerHTML = wrongAnswer;
-//            
-//            answers.push(wrongAnswer);
-//        }
-//    }
-//               
-// }
-//           
-//           //if we click an answer box.
-//           
-//for(i=1; i<5; i++){
-//    document.getElementById("box"+ i).onclick = function(){
-//    //check if we are playing
-//    
-//    if(playing==true){//yes
-//        if(this.innerHTML == correctAnswer){
-//            
-//            //as we have got correct answer.
-//            
-//            score++;
-//            
-//document.getElementById("scorevalue").innerHTML = score;
-//            
-//            //hide wrong box and show correct box.
-//            
-//            hide("wrong");
-//            show("correct");
-//            setTimeout(function(){
-//                
-//                hide("correct");
-//            } , 1000);
-//            
-//            //generate q&a
-//            
-//            generateQA();
-//            
-//        }else{
-//            //wrong answer
-//            
-//            hide("correct");
-//            show("wrong");
-//            setTimeout(function(){
-//                hide("wrong");
-//            } , 1000);
-//        }
-//     }
-//  }
-//}
-//           //reduce time by 1 sec in loops.
-//               //timeleft?
-//                    //yes->continue.
-//                    //no->gameover.
-//           
-//           //generate new q&a.
-//
-//
-////if we click on ans box
-//       //if we are playing
-//            //correct?
-//               //yes
-//                   //increase score
-//                   //show correct box for 1 sec.
-//                   //generate new q&a.
-//                //no
-//                    //show try again box for 1 sec.
-        </script> 
+var trialsLeft;
+$(function(){
+    
+    $("#startreset").click(function(){
         
+        if(playing == true){
+            location.reload();
+        }else{
+            playing = true;
+            
+            score = 0;
+            $("scorevalue").html(score);
+            
+            $("#trialsLeft").show();
+            trialsLeft = 3;
+        }
+    });
+});
+        </script>
     </body>
 </html>
