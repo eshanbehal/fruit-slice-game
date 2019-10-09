@@ -72,9 +72,19 @@ $(function(){
             
             $("#trialsLeft").show();
             trialsLeft = 3;
+            
+            addHearts();
         }
     });
 });
+            
+            function addHearts(){
+                
+                for(i=0; i<trialsLeft; i++){
+            
+            $("#trialsLeft").append(" x ");
+        }
+            }
         </script>
     </body>
 </html>
