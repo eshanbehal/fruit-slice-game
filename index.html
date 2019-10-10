@@ -42,6 +42,11 @@
                 
             </div>
         </div>
+        
+        <audio id="slicesound">
+        <source src="audio/slicefruit.mp3">
+        <source src="audio/slicefruit.ogg">
+        </audio>
 <!--
         <audio id="slicesound">
             <source src="audio/slicefruit.mp3"></source>
@@ -87,7 +92,16 @@ $(function(){
             startAction();
         }
     });
+    
+$("#fruit1").mouseover(function(){
+    
+    score++;
+    $("#scorevalue").html(score);
+    
+//    document.getElementById("slicesound").play();
+    $("#slicesound")[0].play();
 });
+
             
 function addHearts(){
 $("#trialsLeft").empty();
@@ -157,6 +171,8 @@ function stopAction(){
 clearInterval(action);
 $("#fruit1").hide();
 }
+    
+    });
         </script>
     </body>
 </html>
