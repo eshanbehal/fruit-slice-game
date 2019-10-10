@@ -1,140 +1,188 @@
+/*styling.css*/
 html{
     height: 100%;
-    background: radial-gradient(circle,#fff,#ccc);
-    background: -webkit-radial-gradient(circle,#fff,#ccc);
-    background: -moz-radial-gradient(circle,#fff,#ccc);
-    background: -ms-radial-gradient(circle,#fff,#ccc);
+    background: radial-gradient(circle, #fff, #ccc);
+    background: -webkit-radial-gradient(circle, #fff, #ccc);   
+    background: -o-radial-gradient(circle, #fff, #ccc);   
+    background: -moz-radial-gradient(circle, #fff, #ccc);
 }
+
 #container{
-    height: 613px;
-    width: 850px;
+    height: 600px;
+    width: 750px;
     background-color: #9DD2EA;
     margin: 10px auto;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 5px 3px 0px #009DE4;
-    -webkit-box-shadow: 0px 5px 3px 0px #009DE4;
-    -moz-box-shadow: 0px 5px 3px 0px #009DE4;
+    box-shadow: 0px 4px 0px 0px #009de4;
+    -moz-box-shadow: 0px 4px 0px 0px #009de4;
+    -webkit-box-shadow: 0px 4px 0px 0px #009de4;
+/*        box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]*/
     position: relative;
 }
+
 #score{
-    position: absolute;
     background-color: #F1FF92;
     color: #888E5F;
-    padding: 10px;
-    box-shadow: 0px 4px #9DA853;
-    -webkit-box-shadow: 0px 4px #9DA853;
-    -moz-box-shadow: 0px 4px #9DA853;
-    left: 810px;
+    padding: 11px;
+    position: absolute;
+    left: 700px;
+    box-shadow: 0px 4px 0px #9da853;
+    -moz-box-shadow: 0px 4px 0px #9da853;
+    -webkit-box-shadow: 0px 4px 0px #9da853;
 }
-/*
+
 #correct{
     position: absolute;
+    left: 260px;
     background-color: #42e252;
-    left: 350px;
     color: white;
-    padding: 10px;
+    padding: 11px;
     display: none;
 }
+
 #wrong{
     position: absolute;
+    left: 250px;
     background-color: #de401a;
-    left: 350px;
     color: white;
-    padding: 10px;
+    padding: 11px;
     display: none;
 }
-*/
+
 #fruitsContainer{
-    width: 750px;
-    height: 430px;
-    background-color: white;
+    width: 650px;
+    height: 400px;
     margin: 50px auto 10px auto;
-    box-shadow: 0px 4px 0px 0px #535AA8;
-    -webkit-box-shadow: 0px 4px 0px 0px #535AA8;
-    -moz-box-shadow: 0px 4px 0px 0px #535AA8;
-/*    border-radius: 10px;*/
+    background-color: white;
+    box-shadow: 0px 4px #535aa8;
+    -moz-box-shadow: 0px 4px #535aa8;
+    -webkit-box-shadow: 0px 4px #535aa8;
+    font-size: 100px;
     text-align: center;
-    font-family: cursive , sans-serif;
-    font-size: 130px;
+    font-family: cursive, sans-serif;
     color: black;
     position: relative;
     overflow: hidden;
 }
+
 #instruction{
-    width: 430px;
+    width: 450px;
     height: 50px;
     background-color: #B481D9;
-    margin: 8px auto;
-    color: black;
-    font-size: 20px;
+    margin: 10px auto;
     text-align: center;
-    line-height: 50px;
-    box-shadow: 0px 4px 0px 0px #8153A8;
-    -webkit-box-shadow: 0px 4px 0px 0px #8153A8;
-    -moz-box-shadow: 0px 4px 0px 0px #8153A8;
-/*    border-radius: 10px;*/
+    line-height: 45px;
+    box-shadow: 0px 4px #8153a8;
+    -moz-box-shadow: 0px 4px #8153a8;
+    -webkit-box-shadow: 0px 4px #8153a8;
 }
-#startreset{
-    width: 95px;
-    background-color: #CEE9F5;
-    padding: 8px;
-    margin: 12px auto;
+
+#choices{
+    width: 450px;
+    height: 100px;
+    margin: 5px auto;
+}
+
+.box{
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    float: left;
+    margin-right: 36px;
     border-radius: 3px;
-    color: black;
     cursor: pointer;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-size: 18px;
-    box-shadow: 0px 4px 0px 0px #9DD2EA;
-    -webkit-box-shadow: 0px 4px 0px 0px #9DA853;
-    -moz-box-shadow: 0px 4px 0px 0px #9DA853;
+    line-height: 80px;
+    position: relative;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
     -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
     -ms-transition: all 0.2s;
 }
 
+.box:hover, #startreset:hover{
+/*    background-color: #9C89F6;*/
+/*    color: white;*/
+/*    box-shadow: 0px 4px #6b54d3;*/
+/*    -moz-box-shadow: 0px 4px #6b54d3;*/
+/*    -webkit-box-shadow: 0px 4px #6b54d3;*/
+}
+
+.box:active, #startreset:active{
+    background-color: #9C89F6;
+    color: white;
+    box-shadow: 0px 0px #6b54d3; 
+    -moz-box-shadow: 0px 0px #6b54d3; 
+    -webkit-box-shadow: 0px 0px #6b54d3; 
+    top: 4px;
+}
+#box4{
+    margin-right: 0;   
+}
+
+#startreset{
+    width: 78px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 auto;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;   
+}
+
 #trialsLeft{
-    width: 100px;
+    width: 80px;
     padding: 10px;
     position: absolute;
-/*
-    top: 27px;
-    left: 20px;
-*/
     background-color: #F1FF92;
-/*    border-radius: 10px;*/
+    border-radius: 3px;
     box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+/*    visibility: hidden;*/
     display: none;
 }
-.life{
-    width: 17px;
-    height: 17px;
-    margin: 0px 8px;
+
+#gameOver{
+    height: 200px;
+    width: 500px;
+    background: linear-gradient(#F3CA6B, #F3706C);
+    background: -webkit-linear-gradient(#F3CA6B, #F3706C);
+    background: -o-linear-gradient(#F3CA6B, #F3706C);
+    background: -moz-linear-gradient(#F3CA6B, #F3706C);
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 170px;
+    left: 145px;
+    z-index: 2;
+    display: none;
+    
 }
+
+.life{
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+}
+
 .fruit{
     display: none;
     position: absolute;
-}
-#gameOver{
-    width: 500px;
-    height: 200px;
-    background: linear-gradient(#F3C46B , #F3766C);
-    background: -webkit-linear-gradient(#F3C46B , #F3766C);
-    background: -moz-linear-gradient(#F3C46B , #F3766C);
-    background: -ms-linear-gradient(#F3C46B , #F3766C);
-    color: white;
-    position: absolute;
-    top: 190px;
-    left: 199px;
-    font-size: 2.4em;
-    text-align: center;
-/*    border-radius: 10px;*/
-    display: none;
-    text-transform: uppercase;
-    z-index: 2;
-    
 }

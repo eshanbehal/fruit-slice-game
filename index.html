@@ -31,11 +31,7 @@
                 Try again
             </div>
 -->
-<!--
-            <div id="fruitsContainer">
-                <img id="fruit1" class="fruit">
-            </div>
--->
+
             <div id="instruction">
                 Catch Fruits
             </div>
@@ -61,9 +57,9 @@
 var playing = false;
 var score;
 var trialsLeft;
-var fruits = ['apple', 'banana', 'cherries', 'grapes', 'mango', 'orange', 'peach', 'pear', 'watermelon'];
 var step;
 var action;
+var fruits = ['apple', 'banana', 'cherries', 'grapes', 'mango', 'orange', 'peach', 'pear', 'watermelon'];
             
 $(function(){
     
@@ -82,6 +78,10 @@ $(function(){
             
             addHearts();
             
+            //hide gameover box.
+            
+            $("#gameOver").hide();
+            
             $("#startreset").html("Reset Game");
             
             startAction();
@@ -89,68 +89,74 @@ $(function(){
     });
 });
             
-            function addHearts(){
+function addHearts(){
+$("#trialsLeft").empty();
                 
-                for(i=0; i<trialsLeft; i++){
+for(i=0; i<trialsLeft; i++){
                 
-                $("#trialsLeft").empty();
             
-            $("#trialsLeft").append('<img src="images/heart.png" class="life">');
-        }
-            }
+$("#trialsLeft").append('<img src="images/heart.png" class="life">');
+  }
+ }
             
-            function startAction(){
+function startAction(){
                 
+//genarate a new fruit
+$("#fruit1").show();
+chooseFruit();
                 
-                //genarate a new fruit
-                $("#fruit1").show();
-                chooseFruit();
+$("#fruit1").css({'left' : Math.round(550*Math.random()), 'top' : -50});
                 
-                $("#fruit1").css({'left' : Math.round(650*Math.random()), 'top' : -70});
+step = 1+ Math.round(5*Math.random());
                 
-                step = 1+ Math.round(5*Math.random());
-                
-                action = setInterval(function(){
+action = setInterval(function(){
                     
-                    $("#fruit1").css('top', $("#fruit1").position().top + step);
+$("#fruit1").css('top', $("#fruit1").position().top + step);
                     
-                    //if fruit position is too low
+//if fruit position is too low
                     
-                    if($("#fruit1").position().top > $("#fruitContainer").height()){
+if($("#fruit1").position().top > $("#fruitsContainer").height()){
                         
-                        //check if we have any trials left.
+//check if we have any trials left.
                         
-                        if(trialsLeft > 1){
-                $("#fruit1").show();
-                chooseFruit();
+if(trialsLeft > 1){
+$("#fruit1").show();
+chooseFruit();
                 
-                $("#fruit1").css({'left' : Math.round(650*Math.random()), 'top' : -70});
+$("#fruit1").css({'left' : Math.round(550*Math.random()), 'top' : -50});
                 
-                step = 1+ Math.round(5*Math.random());
+step = 1+ Math.round(5*Math.random());
                             
-                //reduce the trialsleft by 1.
-                            trialsLeft --;
+//reduce the trialsleft by 1.
+trialsLeft --;
+//populate trialsleft box.
                             
-                            //populate trialsleft box.
+addHearts();
+}else{
                             
-                            addHearts();
-                        }else{
+//gameOver
+playing = false;
+$("#startreset").html("Start Game");
+$("#gameOver").show();
                             
-                            //gameOver
-                           playing = false;
-                            $("#startreset").html("start game");
-                            $("#gameOver").show();
+$("#gameOver").html('<p>game over!!!</p><p>your score is:' +  score+'</p>');
+$("#trialsLeft").hide();
                             
-                            $("#gameOver").html('<p>gameover!!!</p><p>your score is:' + score+'.</p>'); 
+stopAction();
                             
-                        }
-                    }
-                }, 10);
-            }
-    
-    function chooseFruit(){
-        $("#fruit1").attr('src' , 'images/' + fruits[Math.round(8*Math.random())] +'.png');
+     }
+   }
+ }, 10);
+}
+function chooseFruit(){
+$("#fruit1").attr('src' , 'images/' + fruits[Math.round(8*Math.random())] +'.png');
     }
+    
+function stopAction(){
+        
+clearInterval(action);
+$("#fruit1").hide();
+}
         </script>
     </body>
 </html>
