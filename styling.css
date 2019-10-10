@@ -113,6 +113,9 @@ html{
     height: 17px;
     margin: 0px 8px;
 }
+.fruit{
+    display: none;
+}
 #gameOver{
     width: 500px;
     height: 200px;

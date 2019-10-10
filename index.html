@@ -19,6 +19,8 @@
             </div>
             
             <div id="fruitsContainer">
+                
+                <img id="fruit1" class="fruit">
             
             </div>
 <!--
@@ -53,11 +55,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
     </script>
-        <script>
+        
+<script>
         
 var playing = false;
 var score;
 var trialsLeft;
+var fruits = ['apple', 'banana', 'cherries', 'grapes', 'mango', 'orange', 'peach', 'pear', 'watermelon'];
+            
 $(function(){
     
     $("#startreset").click(function(){
@@ -92,8 +97,13 @@ $(function(){
             
             function startAction(){
                 
-                $("#fruitsContainer").append('<img src="images/apple.png" class="fruit">');
+                $("#fruit1").show();
+                chooseFruit();
             }
+    
+    function chooseFruit(){
+        $("#fruit1").attr('src' , 'images/' + fruits[Math.round(8*Math.random())] +'.png');
+    }
         </script>
     </body>
 </html>
