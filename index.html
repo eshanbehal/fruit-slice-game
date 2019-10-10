@@ -47,12 +47,7 @@
         <source src="audio/slicefruit.mp3">
         <source src="audio/slicefruit.ogg">
         </audio>
-<!--
-        <audio id="slicesound">
-            <source src="audio/slicefruit.mp3"></source>
-            <source src="audio/slicefruit.ogg"></source>
-        </audio>
--->
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
     </script>
@@ -100,6 +95,16 @@ $("#fruit1").mouseover(function(){
     
 //    document.getElementById("slicesound").play();
     $("#slicesound")[0].play();
+    
+    clearInterval(action);
+    
+    //hide fruit using animation
+    
+    //for slicing the fruit
+    
+    $("#fruit1").hide("explode", 500);
+    
+    setTimeout(startAction, 500);
 });
 
             
