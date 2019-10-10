@@ -92,6 +92,8 @@ $(function(){
             function addHearts(){
                 
                 for(i=0; i<trialsLeft; i++){
+                
+                $("#trialsLeft").empty();
             
             $("#trialsLeft").append('<img src="images/heart.png" class="life">');
         }
@@ -99,6 +101,8 @@ $(function(){
             
             function startAction(){
                 
+                
+                //genarate a new fruit
                 $("#fruit1").show();
                 chooseFruit();
                 
@@ -109,6 +113,38 @@ $(function(){
                 action = setInterval(function(){
                     
                     $("#fruit1").css('top', $("#fruit1").position().top + step);
+                    
+                    //if fruit position is too low
+                    
+                    if($("#fruit1").position().top > $("#fruitContainer").height()){
+                        
+                        //check if we have any trials left.
+                        
+                        if(trialsLeft > 1){
+                $("#fruit1").show();
+                chooseFruit();
+                
+                $("#fruit1").css({'left' : Math.round(650*Math.random()), 'top' : -70});
+                
+                step = 1+ Math.round(5*Math.random());
+                            
+                //reduce the trialsleft by 1.
+                            trialsLeft --;
+                            
+                            //populate trialsleft box.
+                            
+                            addHearts();
+                        }else{
+                            
+                            //gameOver
+                           playing = false;
+                            $("#startreset").html("start game");
+                            $("#gameOver").show();
+                            
+                            $("#gameOver").html('<p>gameover!!!</p><p>your score is:' + score+'.</p>'); 
+                            
+                        }
+                    }
                 }, 10);
             }
     
